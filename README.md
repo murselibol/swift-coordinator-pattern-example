@@ -1,2 +1,1 @@
-# swift-coordinator-pattern-example
-[ WIP ]
+# swift-coordinator-pattern-example [ WIP ]
