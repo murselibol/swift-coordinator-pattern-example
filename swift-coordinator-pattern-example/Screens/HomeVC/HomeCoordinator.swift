@@ -20,8 +20,11 @@ class HomeCoordinator: NSObject, Coordinator {
     func start() {
         let homeVC = HomeVC()
         homeVC.coordinator = self
-        navigationController.pushViewController(homeVC, animated: true
-        )
+        navigationController.pushViewController(homeVC, animated: true)
+    }
+    
+    func finishCoordinator() {
+      childCoordinators.removeAll()
     }
     
     func navigateProfileVC() {

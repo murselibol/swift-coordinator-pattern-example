@@ -17,7 +17,7 @@ class SettingVC: UIViewController {
     }
     
     deinit {
-        coordinator?.parentCoordinator?.childDidFinish(coordinator)
+        coordinator?.finishCoordinator()
     }
 
     @IBAction func tappedPrivacyBtn(_ sender: UIButton) {

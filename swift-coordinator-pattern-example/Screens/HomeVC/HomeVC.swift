@@ -15,6 +15,10 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    deinit {
+        coordinator?.finishCoordinator()
+    }
 
     @IBAction func tappedProfileBtn(_ sender: UIButton) {
         coordinator?.navigateProfileVC()

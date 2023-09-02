@@ -24,6 +24,11 @@ class ProfileCoordinator: Coordinator {
         navigationController.pushViewController(profileVC, animated: true)
     }
     
+    func finishCoordinator() {
+      childCoordinators.removeAll()
+      parentCoordinator?.childDidFinish(self)
+    }
+    
     func navigateSettingVC() {
         let settingCoordinator = SettingCoordinator(navigationController: navigationController)
         settingCoordinator.parentCoordinator = self

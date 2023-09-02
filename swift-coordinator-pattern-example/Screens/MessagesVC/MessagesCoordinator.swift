@@ -24,6 +24,11 @@ class MessagesCoordinator: Coordinator {
         navigationController.pushViewController(messagesVC, animated: true)
     }
     
+    func finishCoordinator() {
+      childCoordinators.removeAll()
+      parentCoordinator?.childDidFinish(self)
+   }
+    
     func navigateSettingVC() {
         let settingCoordinator = SettingCoordinator(navigationController: navigationController)
         settingCoordinator.parentCoordinator = self

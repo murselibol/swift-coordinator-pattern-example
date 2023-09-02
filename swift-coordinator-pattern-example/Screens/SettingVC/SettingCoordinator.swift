@@ -24,6 +24,11 @@ class SettingCoordinator: Coordinator {
         navigationController.pushViewController(settingVC, animated: true)
     }
     
+    func finishCoordinator() {
+      childCoordinators.removeAll()
+      parentCoordinator?.childDidFinish(self)
+    }
+    
     func navigatePrivacy() {
         let privacyCoordinator = PrivacyCoordinator(navigationController: navigationController)
         privacyCoordinator.parentCoordinator = self

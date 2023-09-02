@@ -17,7 +17,7 @@ class ProfileVC: UIViewController {
     }
     
     deinit {
-        coordinator?.parentCoordinator?.childDidFinish(coordinator)
+        coordinator?.finishCoordinator()
     }
 
     @IBAction func tappedSettingBtn(_ sender: UIButton) {

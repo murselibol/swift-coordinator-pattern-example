@@ -24,6 +24,11 @@ class PrivacyCoordinator: NSObject, Coordinator {
         navigationController.pushViewController(privacyVC, animated: true)
     }
     
+    func finishCoordinator() {
+      childCoordinators.removeAll()
+      parentCoordinator?.childDidFinish(self)
+    }
+    
     func navigateBack() {
         navigationController.popViewController(animated: true)
     }
