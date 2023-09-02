@@ -15,6 +15,10 @@ class MessagesVC: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    deinit {
+        coordinator?.parentCoordinator?.childDidFinish(coordinator)
+    }
 
     @IBAction func tappedSettingBtn(_ sender: UIButton) {
         coordinator?.navigateSettingVC()

@@ -16,6 +16,10 @@ class PrivacyVC: UIViewController {
 
     }
     
+    deinit {
+        coordinator?.parentCoordinator?.childDidFinish(coordinator)
+    }
+    
     @IBAction func tappedBackBtn(_ sender: UIButton) {
         coordinator?.navigateBack()
     }

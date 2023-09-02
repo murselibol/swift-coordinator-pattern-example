@@ -18,7 +18,6 @@ class HomeCoordinator: NSObject, Coordinator {
     deinit { print("DeInit", Self.self) }
     
     func start() {
-        navigationController.delegate = self
         let homeVC = HomeVC()
         homeVC.coordinator = self
         navigationController.pushViewController(homeVC, animated: true
@@ -37,24 +36,5 @@ class HomeCoordinator: NSObject, Coordinator {
         messagesCoordinator.parentCoordinator = self
         childCoordinators.append(messagesCoordinator)
         messagesCoordinator.start()
-    }
-}
-
-extension HomeCoordinator: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
-            return
-        }
-        if navigationController.viewControllers.contains(fromViewController) {
-            return
-        }
-
-        if let profileVC = fromViewController as? ProfileVC {
-            childDidFinish(profileVC.coordinator)
-        }
-
-        if let messagesVC = fromViewController as? MessagesVC {
-            childDidFinish(messagesVC.coordinator)
-        }
     }
 }

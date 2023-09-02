@@ -15,6 +15,10 @@ class SettingVC: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    deinit {
+        coordinator?.parentCoordinator?.childDidFinish(coordinator)
+    }
 
     @IBAction func tappedPrivacyBtn(_ sender: UIButton) {
         coordinator?.navigatePrivacy()

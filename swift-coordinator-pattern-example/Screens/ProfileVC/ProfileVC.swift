@@ -13,7 +13,11 @@ class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    deinit {
+        coordinator?.parentCoordinator?.childDidFinish(coordinator)
     }
 
     @IBAction func tappedSettingBtn(_ sender: UIButton) {

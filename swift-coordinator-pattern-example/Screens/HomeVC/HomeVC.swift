@@ -13,7 +13,7 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 
     @IBAction func tappedProfileBtn(_ sender: UIButton) {
