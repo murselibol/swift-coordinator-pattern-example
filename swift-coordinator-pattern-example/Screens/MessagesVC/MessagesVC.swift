@@ -7,20 +7,14 @@
 
 import UIKit
 
-class MessagesVC: UIViewController {
-    
-    weak var coordinator: MessagesCoordinator?
+class MessagesVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
-    deinit {
-        coordinator?.finishCoordinator()
-    }
 
     @IBAction func tappedSettingBtn(_ sender: UIButton) {
-        coordinator?.navigateSettingVC()
+        coordinator?.commonControllerToCoordinator(eventType: .setting)
     }
 }

@@ -7,29 +7,23 @@
 
 import UIKit
 
-class PrivacyVC: UIViewController {
+class PrivacyVC: BaseVC {
     
-    weak var coordinator: PrivacyCoordinator?
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-    deinit {
-        coordinator?.finishCoordinator()
-    }
-    
     @IBAction func tappedBackBtn(_ sender: UIButton) {
-        coordinator?.navigateBack()
+        coordinator?.commonControllerToCoordinator(eventType: .back)
     }
     
     @IBAction func tappedProfileBtn(_ sender: UIButton) {
-        coordinator?.navigateProfileVC()
+        coordinator?.commonControllerToCoordinator(eventType: .profile)
     }
     
     @IBAction func tappedHomeBtn(_ sender: UIButton) {
-        coordinator?.navigateHomeVC()
+        coordinator?.commonControllerToCoordinator(eventType: .home)
     }
     
 }

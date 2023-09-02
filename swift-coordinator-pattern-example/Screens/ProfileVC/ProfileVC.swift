@@ -7,20 +7,14 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
-    
-    weak var coordinator: ProfileCoordinator?
+class ProfileVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    
-    deinit {
-        coordinator?.finishCoordinator()
-    }
 
     @IBAction func tappedSettingBtn(_ sender: UIButton) {
-        coordinator?.navigateSettingVC()
+        coordinator?.commonControllerToCoordinator(eventType: .setting)
     }
 }

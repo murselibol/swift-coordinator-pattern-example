@@ -11,6 +11,7 @@ class PrivacyCoordinator: NSObject, Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     weak var parentCoordinator: Coordinator?
+    var callBack: ((CoordinatorEventType) -> ())?
     
     init(navigationController: UINavigationController) {
         print("Init", Self.self)
@@ -22,11 +23,6 @@ class PrivacyCoordinator: NSObject, Coordinator {
         let privacyVC = PrivacyVC()
         privacyVC.coordinator = self
         navigationController.pushViewController(privacyVC, animated: true)
-    }
-    
-    func finishCoordinator() {
-      childCoordinators.removeAll()
-      parentCoordinator?.childDidFinish(self)
     }
     
     func navigateBack() {
@@ -43,6 +39,18 @@ class PrivacyCoordinator: NSObject, Coordinator {
         navigationController.popToRootViewController(animated: true)
     }
     
-
+    func commonControllerToCoordinator(eventType: AppFlowEventType) {
+        switch eventType {
+        case .back:
+            navigateBack()
+        case .profile:
+            navigateProfileVC()
+        case .home:
+            navigateHomeVC()
+        case .finishController:
+            callBack?(.finishCoordinator(coordinator: self))
+        default:
+            break
+        }
+    }
 }
-

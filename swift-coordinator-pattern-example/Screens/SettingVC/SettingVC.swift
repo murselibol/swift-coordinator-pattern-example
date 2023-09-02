@@ -7,20 +7,14 @@
 
 import UIKit
 
-class SettingVC: UIViewController {
+class SettingVC: BaseVC {
     
-    weak var coordinator: SettingCoordinator?
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-    deinit {
-        coordinator?.finishCoordinator()
-    }
-
     @IBAction func tappedPrivacyBtn(_ sender: UIButton) {
-        coordinator?.navigatePrivacy()
+        coordinator?.commonControllerToCoordinator(eventType: .privacy)
     }
 }

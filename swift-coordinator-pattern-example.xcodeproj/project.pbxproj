@@ -30,6 +30,8 @@
 		59232FE32A7E199D008A810B /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59232FE12A7E199D008A810B /* MessagesVC.swift */; };
 		59232FE42A7E199D008A810B /* MessagesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59232FE22A7E199D008A810B /* MessagesVC.xib */; };
 		59232FE72A7E19AF008A810B /* MessagesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59232FE62A7E19AF008A810B /* MessagesCoordinator.swift */; };
+		5938A8C32AA3369E00B2C01D /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5938A8C22AA3369E00B2C01D /* BaseVC.swift */; };
+		5938A8C52AA3375900B2C01D /* RouterFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5938A8C42AA3375900B2C01D /* RouterFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		59232FE12A7E199D008A810B /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		59232FE22A7E199D008A810B /* MessagesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesVC.xib; sourceTree = "<group>"; };
 		59232FE62A7E19AF008A810B /* MessagesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCoordinator.swift; sourceTree = "<group>"; };
+		5938A8C22AA3369E00B2C01D /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		5938A8C42AA3375900B2C01D /* RouterFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 				59232FE02A7E1961008A810B /* MessagesVC */,
 				59232FC92A7E14CF008A810B /* SettingVC */,
 				591BD0932A7FE51D00A01674 /* PrivacyVC */,
+				5938A8C22AA3369E00B2C01D /* BaseVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				59232FDE2A7E15A8008A810B /* Coordinator.swift */,
+				5938A8C42AA3375900B2C01D /* RouterFlow.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -381,8 +387,10 @@
 				59232FDB2A7E158B008A810B /* ProfileCoordinator.swift in Sources */,
 				59232FD92A7E157E008A810B /* SettingCoordinator.swift in Sources */,
 				59232FCD2A7E14F7008A810B /* HomeVC.swift in Sources */,
+				5938A8C32AA3369E00B2C01D /* BaseVC.swift in Sources */,
 				59232FD52A7E1513008A810B /* SettingVC.swift in Sources */,
 				59232FDD2A7E1595008A810B /* HomeCoordinator.swift in Sources */,
+				5938A8C52AA3375900B2C01D /* RouterFlow.swift in Sources */,
 				59232F942A7E135B008A810B /* AppDelegate.swift in Sources */,
 				59232F962A7E135B008A810B /* SceneDelegate.swift in Sources */,
 				59232FE32A7E199D008A810B /* MessagesVC.swift in Sources */,

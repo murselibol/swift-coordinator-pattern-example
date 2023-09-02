@@ -7,25 +7,19 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
-    
-    weak var coordinator: HomeCoordinator?
+class HomeVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    
-    deinit {
-        coordinator?.finishCoordinator()
-    }
 
     @IBAction func tappedProfileBtn(_ sender: UIButton) {
-        coordinator?.navigateProfileVC()
+        coordinator?.commonControllerToCoordinator(eventType: .profile)
     }
     
     @IBAction func tappedMessagesBtn(_ sender: UIButton) {
-        coordinator?.navigateMessagesVC()
+        coordinator?.commonControllerToCoordinator(eventType: .messages)
     }
     
 }
