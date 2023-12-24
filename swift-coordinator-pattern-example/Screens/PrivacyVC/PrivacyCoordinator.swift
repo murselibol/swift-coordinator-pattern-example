@@ -9,7 +9,7 @@ import UIKit
 
 class PrivacyCoordinator: NSObject, Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController?
     weak var parentCoordinator: Coordinator?
     
     init(navigationController: UINavigationController) {
@@ -21,7 +21,7 @@ class PrivacyCoordinator: NSObject, Coordinator {
     func start() {
         let privacyVC = PrivacyVC()
         privacyVC.coordinator = self
-        navigationController.pushViewController(privacyVC, animated: true)
+        navigationController?.pushViewController(privacyVC, animated: true)
     }
     
     func finishCoordinator() {
@@ -30,17 +30,17 @@ class PrivacyCoordinator: NSObject, Coordinator {
     }
     
     func navigateBack() {
-        navigationController.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
-    func navigateProfileVC() {
-        if let profileViewController = navigationController.viewControllers.first(where: { $0 is ProfileVC }) {
-            navigationController.popToViewController(profileViewController, animated: true)
+    func navigateMessageVC() {
+        if let messageViewController = navigationController?.viewControllers.first(where: { $0 is MessagesVC }) {
+            navigationController?.popToViewController(messageViewController, animated: true)
         }
     }
     
     func navigateHomeVC() {
-        navigationController.popToRootViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
 

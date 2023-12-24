@@ -24,8 +24,8 @@ class PrivacyVC: UIViewController {
         coordinator?.navigateBack()
     }
     
-    @IBAction func tappedProfileBtn(_ sender: UIButton) {
-        coordinator?.navigateProfileVC()
+    @IBAction func tappedMessageBtn(_ sender: UIButton) {
+        coordinator?.navigateMessageVC()
     }
     
     @IBAction func tappedHomeBtn(_ sender: UIButton) {

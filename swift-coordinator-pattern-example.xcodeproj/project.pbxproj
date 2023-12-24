@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59133E772B3838AA000CA187 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59133E762B3838AA000CA187 /* AppCoordinator.swift */; };
+		59133E792B3838B8000CA187 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59133E782B3838B8000CA187 /* MainCoordinator.swift */; };
 		591BD0962A7FE53A00A01674 /* PrivacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591BD0942A7FE53A00A01674 /* PrivacyVC.swift */; };
 		591BD0972A7FE53A00A01674 /* PrivacyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591BD0952A7FE53A00A01674 /* PrivacyVC.xib */; };
 		591BD0992A7FE54500A01674 /* PrivacyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591BD0982A7FE54500A01674 /* PrivacyCoordinator.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		59133E762B3838AA000CA187 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		59133E782B3838B8000CA187 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		591BD0942A7FE53A00A01674 /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
 		591BD0952A7FE53A00A01674 /* PrivacyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyVC.xib; sourceTree = "<group>"; };
 		591BD0982A7FE54500A01674 /* PrivacyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyCoordinator.swift; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				59232FDE2A7E15A8008A810B /* Coordinator.swift */,
+				59133E762B3838AA000CA187 /* AppCoordinator.swift */,
+				59133E782B3838B8000CA187 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -382,12 +388,14 @@
 				59232FD92A7E157E008A810B /* SettingCoordinator.swift in Sources */,
 				59232FCD2A7E14F7008A810B /* HomeVC.swift in Sources */,
 				59232FD52A7E1513008A810B /* SettingVC.swift in Sources */,
+				59133E772B3838AA000CA187 /* AppCoordinator.swift in Sources */,
 				59232FDD2A7E1595008A810B /* HomeCoordinator.swift in Sources */,
 				59232F942A7E135B008A810B /* AppDelegate.swift in Sources */,
 				59232F962A7E135B008A810B /* SceneDelegate.swift in Sources */,
 				59232FE32A7E199D008A810B /* MessagesVC.swift in Sources */,
 				591BD0992A7FE54500A01674 /* PrivacyCoordinator.swift in Sources */,
 				59232FE72A7E19AF008A810B /* MessagesCoordinator.swift in Sources */,
+				59133E792B3838B8000CA187 /* MainCoordinator.swift in Sources */,
 				59232FDF2A7E15A8008A810B /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

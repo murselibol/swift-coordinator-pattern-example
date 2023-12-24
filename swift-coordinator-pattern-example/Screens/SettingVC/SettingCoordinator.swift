@@ -9,7 +9,7 @@ import UIKit
 
 class SettingCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController?
     weak var parentCoordinator: Coordinator?
     
     init(navigationController: UINavigationController) {
@@ -21,7 +21,7 @@ class SettingCoordinator: Coordinator {
     func start() {
         let settingVC = SettingVC()
         settingVC.coordinator = self
-        navigationController.pushViewController(settingVC, animated: true)
+        navigationController?.pushViewController(settingVC, animated: true)
     }
     
     func finishCoordinator() {
@@ -30,7 +30,7 @@ class SettingCoordinator: Coordinator {
     }
     
     func navigatePrivacy() {
-        let privacyCoordinator = PrivacyCoordinator(navigationController: navigationController)
+        let privacyCoordinator = PrivacyCoordinator(navigationController: navigationController!)
         privacyCoordinator.parentCoordinator = self
         childCoordinators.append(privacyCoordinator)
         privacyCoordinator.start()

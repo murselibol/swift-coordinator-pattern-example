@@ -9,7 +9,7 @@ import UIKit
 
 class MessagesCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController?
     weak var parentCoordinator: HomeCoordinator?
     
     init(navigationController: UINavigationController) {
@@ -21,7 +21,7 @@ class MessagesCoordinator: Coordinator {
     func start() {
         let messagesVC = MessagesVC()
         messagesVC.coordinator = self
-        navigationController.pushViewController(messagesVC, animated: true)
+        navigationController?.pushViewController(messagesVC, animated: true)
     }
     
     func finishCoordinator() {
@@ -30,7 +30,7 @@ class MessagesCoordinator: Coordinator {
    }
     
     func navigateSettingVC() {
-        let settingCoordinator = SettingCoordinator(navigationController: navigationController)
+        let settingCoordinator = SettingCoordinator(navigationController: navigationController!)
         settingCoordinator.parentCoordinator = self
         childCoordinators.append(settingCoordinator)
         settingCoordinator.start()

@@ -9,19 +9,24 @@ import UIKit
 
 class ProfileCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController?
     weak var parentCoordinator: HomeCoordinator?
+
     
-    init(navigationController: UINavigationController) {
+    init() {
         print("Init", Self.self)
-        self.navigationController = navigationController
+        navigationController = UINavigationController()
     }
     deinit { print("DeInit", Self.self) }
     
+    lazy var profileVC: ProfileVC = {
+        let vc = ProfileVC()
+        vc.coordinator = self
+        return vc
+    }()
+    
     func start() {
-        let profileVC = ProfileVC()
-        profileVC.coordinator = self
-        navigationController.pushViewController(profileVC, animated: true)
+        navigationController!.setViewControllers([profileVC], animated: false)
     }
     
     func finishCoordinator() {
@@ -30,7 +35,7 @@ class ProfileCoordinator: Coordinator {
     }
     
     func navigateSettingVC() {
-        let settingCoordinator = SettingCoordinator(navigationController: navigationController)
+        let settingCoordinator = SettingCoordinator(navigationController: navigationController!)
         settingCoordinator.parentCoordinator = self
         childCoordinators.append(settingCoordinator)
         settingCoordinator.start()

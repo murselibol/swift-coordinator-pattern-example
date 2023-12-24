@@ -7,35 +7,35 @@
 
 import UIKit
 
-class HomeCoordinator: NSObject, Coordinator {
+class HomeCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController?
     
-    init(navigationController: UINavigationController) {
+    
+    init() {
         print("Init", Self.self)
-        self.navigationController = navigationController
+        navigationController = UINavigationController()
     }
     deinit { print("DeInit", Self.self) }
     
+    lazy var homeVC: HomeVC = {
+        let vc = HomeVC()
+        vc.coordinator = self
+        return vc
+    }()
+    
     func start() {
-        let homeVC = HomeVC()
-        homeVC.coordinator = self
-        navigationController.pushViewController(homeVC, animated: true)
+        navigationController!.setViewControllers([homeVC], animated: false)
     }
     
     func finishCoordinator() {
       childCoordinators.removeAll()
     }
     
-    func navigateProfileVC() {
-        let profileCoordinator = ProfileCoordinator(navigationController: navigationController)
-        profileCoordinator.parentCoordinator = self
-        childCoordinators.append(profileCoordinator)
-        profileCoordinator.start()
-    }
+    func navigateProfileVC() {}
     
     func navigateMessagesVC() {
-        let messagesCoordinator = MessagesCoordinator(navigationController: navigationController)
+        let messagesCoordinator = MessagesCoordinator(navigationController: navigationController!)
         messagesCoordinator.parentCoordinator = self
         childCoordinators.append(messagesCoordinator)
         messagesCoordinator.start()
